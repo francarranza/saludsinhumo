@@ -1,0 +1,11 @@
+from django.contrib import admin
+from app_sinhumo.models import Form
+
+class FormAdmin(admin.ModelAdmin):
+    fields = ['Nombre', 'Apellido']
+    list_display = ('Nombre', 'Apellido')
+    list_filter = ['Apellido', 'Nombre']
+    search_fields = ['Nombre', 'Apellido']
+
+admin.site.register(Form, FormAdmin)
+    

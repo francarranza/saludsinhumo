@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+<!--{% load staticfiles %} -->
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  </head>
+
+  <body>
+    <center>
+      {% if messages %}
+        {% for message in messages %}
+        <p{% if message.tags %} class="alert alert-{{ message.tags }}" role="alert"{% endif %}>
+            <strong>{{ message }}</strong>
+        </p>
+        {% endfor %}
+      {% endif %}
+    </center>
+    <div class="jumbotron">
+      <h1>Acá <b><span style="color:#DF7401">NO</b> se fuma</h1>
+      <p class="lead">Mediante un enfoque colaborativo y de concientización, esta aplicación busca recabar información respecto del cumplimiento de la normativa de protección de la salud y control de tabaco en Argentina y contribuir a la concientización de la importancia del respeto de esta normativa.</p>
+      <p><a class="btn btn-lg btn-danger" href="denunciar" role="button">Denunciar</a></p>
+    </div>
+
+    <div class="row marketing">
+      <div class="col-lg-6">
+        <h4><a class="btn btn-lg btn-success" href="como_funciona" role="button"> ¿Como funciona?</a></h4>
+        <p>Mediante una interfaz amigable, los/as usuarios/as tendrían la posibilidad de reportar la existencia de violaciones a la ley de protección de la salud y control de tabaco en ambientes cerrados.</p>
+      </div>
+
+      <div class="col-lg-6">
+        <h4><a class="btn btn-lg btn-success" href="legislacion" role="button"> Legislación</a></h4>
+        <p>Cómo debe ser una legislación libre de humo: Simple, clara y fácil de aplicar, Sancionada e implementada por el Estado, Universal, Adecuadamente implementada...</p>
+      </div>
+    </div>
+
+      <footer class="footer">
+        <p>&copy; Webmaster carrylon</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/static/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+
+
+    {% endblock %}

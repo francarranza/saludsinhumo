@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+<!--{% load staticfiles %} -->
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <body>
+      <h2><strong>Contacto</strong></h2>
+      <div class="formu">
+        <form method="post">
+          {% csrf_token %}
+          <table class="">
+            <tr>
+                <tr>
+                  <td class="texto">Nombre</td>
+                  <td>{{ form.Nombre }}</td>
+                </tr>
+                <tr>
+                  <td class="texto">Email</td>
+                  <td>{{ form.Email }}</td>
+                </tr>
+                <tr>
+                  <td class="texto">Asunto</td>
+                  <td>{{ form.Asunto }}</td>
+                </tr>
+                <tr>
+                  <td class="texto">Comentario</td>
+                  <td>{{ form.Comentario }}</td>
+                </tr>
+            </tr>
+            <center>
+              {% if messages %}
+                {% for message in messages %}
+                <p{% if message.tags %} class="alert alert-{{ message.tags }}" role="alert"{% endif %}>
+                  <strong>
+                    {{ message }}
+                  </strong>
+                </p>
+                {% endfor %}
+              {% endif %}
+            </center>
+          </table>
+          <input type="submit" class="btn btn-primary" value="Enviar"/>
+        </form>
+      </div>
+    </body>
+</html>
+
+    {% endblock %}

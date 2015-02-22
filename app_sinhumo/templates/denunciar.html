@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+<!--{% load staticfiles %} -->
+{% block content %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Denunciar</title>
+  </head>
+
+  <body>
+    <h2><strong>Denunciar</strong></h2>
+    <form method="post" enctype="multipart/form-data" action="{% url 'denunciar' %}">
+      {% csrf_token %}
+      <table class="">
+          <tr>
+              <tr>
+                  <td class="texto">Nombre</td>
+                  <td>{{ form.Nombre }}</td>
+              </tr>
+              <tr>
+                  <td class="texto">Apellido</td>
+                  <td>{{ form.Apellido }}</td>
+              </tr>
+              <tr>
+                  <td class="texto">DNI</td>
+                  <td>{{ form.DNI }}</td>
+              </tr>
+              <tr>
+                  <td class="texto">Telefono</td>
+                  <td>{{ form.Telefono }}</td>
+              </tr>
+              <tr>
+                  <td class="texto">Email</td>
+                  <td>{{ form.Email }}</td>
+              </tr>
+              <tr>
+                  <td class="texto">Razon social del Denunciado</td>
+                  <td>{{ form.Denunciado }}</td>
+              </tr>
+              <tr>
+                  <td class="texto">Rubro</td>
+                  <td>{{ form.Rubro }}</td>
+              </tr>
+              <tr>
+                  <td class="texto">Direccion del sitio del hecho</td>
+                  <td>{{ form.Direccion }}</td>
+              </tr>
+              <tr>
+                  <td class="texto">Provincia</td>
+                  <td>{{ form.Provincia }}</td>
+              </tr>
+              <tr>
+                  <td class="texto">Ciudad</td>
+                  <td>{{ form.Ciudad }}</td>
+              </tr>
+              <tr>
+                  <td class="texto">Descripción del hecho</td>
+                  <td>{{ form.Descripcion }}</td>
+              </tr>
+              <tr>
+                  <td class="texto">Imagen</td>
+                  <td>{{ form.Imagen }}</td>
+              </tr>
+
+          </tr>
+          <center>
+              {% if form.errors %}
+                  <p class="alert alert-warning" role="alert">
+                    <strong>
+                      Por favor complete todos los campos.
+                    </strong>
+                  </p>
+              {% endif %}
+              {% if messages %}
+              {% for message in messages %}
+              <p{% if message.tags %} class="alert alert-{{ message.tags }} " role="alert"{% endif %}>
+                <strong>
+                  {{ message }}
+                </strong>
+              </p>
+              {% endfor %}
+            {% endif %}
+          </center>
+      </table>
+      <input type="submit" class="btn btn-primary" value="Enviar"/>
+  </form>
+  </body>
+</html>
+
+    {% endblock %}
