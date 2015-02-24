@@ -89,4 +89,4 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'francar94@gmail.com'
-EMAIL_HOST_PASSWORD = 'qaz753wsx951.'
+EMAIL_HOST_PASSWORD = ''
